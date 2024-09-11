@@ -44,7 +44,7 @@ export function Footer() {
                 <NavLink href="https://www.linkedin.com/in/jangidankit/">
                   LinkedIn
                 </NavLink>
-                <NavLink href="iamjangidankit@gmail.com">Mail</NavLink>
+                {/* <NavLink href="iamjangidankit@gmail.com">Mail</NavLink> */}
               </div>
               <div className="flex gap-x-12 md:hidden">
                 <SocialLinkMobile

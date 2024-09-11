@@ -67,7 +67,7 @@ export default function App({ Component, pageProps, router }) {
     <main
       className={`${workSans.variable} ${poppins.variable} ${calSans.variable} font-sans`}
     >
-      <DefaultSeo {...seoOptions} />
+      {/* <DefaultSeo {...seoOptions} />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
@@ -79,18 +79,18 @@ export default function App({ Component, pageProps, router }) {
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
-      </Script>
+      </Script> */}
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
         </div>
       </div>
       <div className="relative selection:bg-indigo-500 selection:text-white dark:selection:bg-indigo-800">
-        <Header previousPathname={previousPathname} />
+        {/* <Header previousPathname={previousPathname} /> */}
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
-          <Analytics />
-          <SpeedInsights />
+          {/* <Analytics />
+          <SpeedInsights /> */}
         </main>
         <Footer />
       </div>

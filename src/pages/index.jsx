@@ -39,7 +39,7 @@ export default function Home({ previousPathname }) {
             tracking-wider text-transparent dark:from-purple-400
             dark:via-indigo-400 dark:to-pink-400 sm:text-5xl"
             >
-              I build things for the web.
+              I think for myself
             </h1>
           </div>
           <p
@@ -48,13 +48,10 @@ export default function Home({ previousPathname }) {
               previousPathname === undefined && 'animate-fade-in'
             )}
           >
-            I&apos;m a full-stack engineer specializing in building & designing
-            scalable applications with great user experience. My current tech
-            stack includes Next.js, Typescript & Tailwind and I occasionally
-            dabble in AI & blockchain technology.
+            To be portfolio + blog website
           </p>
 
-          <Button
+          {/* <Button
             href="/about"
             className={clsx(
               `py-1.5 md:py-2`,
@@ -62,7 +59,7 @@ export default function Home({ previousPathname }) {
             )}
           >
             Learn More
-          </Button>
+          </Button> */}
         </div>
       </Container>
     </>
