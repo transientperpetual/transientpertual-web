@@ -39,7 +39,7 @@ export default function Home({ previousPathname }) {
             tracking-wider text-transparent dark:from-purple-400
             dark:via-indigo-400 dark:to-pink-400 sm:text-5xl"
             >
-              Independent thinker
+              Independent thinker.
             </h1>
           </div>
           <p
