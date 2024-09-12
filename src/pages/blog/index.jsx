@@ -58,24 +58,26 @@ export default function Blog({ articles, articlePositions }) {
 export const getStaticProps = async () => {
   const databaseId = process.env.NOTION_BLOG_DB_ID
   const database = await getDatabase(databaseId, 'date', 'descending')
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-  const supabaseServerKey = process.env.SUPABASE_SERVICE_KEY || ''
-  const SupabaseAdmin = createClient(supabaseUrl, supabaseServerKey)
+  // const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
+  // const supabaseServerKey = process.env.SUPABASE_SERVICE_KEY || ''
+  // const SupabaseAdmin = createClient(supabaseUrl, supabaseServerKey)
 
-  // Fetch pageViews data for each article and update the database object
-  for (const article of database) {
-    const title = slugify(article.properties?.name.title[0].plain_text, {
-      strict: true,
-      lower: true,
-    })
-    const response = await SupabaseAdmin.from('analytics')
-      .select('views')
-      .filter('slug', 'eq', title)
-    const pageViews = response.data[0]?.views || 0
+  // // Fetch pageViews data for each article and update the database object
+  // for (const article of database) {
+  //   const title = slugify(article.properties?.name.title[0].plain_text, {
+  //     strict: true,
+  //     lower: true,
+  //   })
+  //   const response = await SupabaseAdmin.from('analytics')
+  //     .select('views')
+  //     .filter('slug', 'eq', title)
+  //   const pageViews = response.data[0]?.views || 0
 
-    // Update the article object with the pageViews data
-    article.pageViews = pageViews
-  }
+  //   // Update the article object with the pageViews data
+  //   article.pageViews = pageViews
+  // }
+
+  console.log("DB : ", database);
 
   return {
     props: {

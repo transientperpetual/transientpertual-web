@@ -12,23 +12,25 @@ export const getDatabase = async (databaseId, sortProperty, sort) => {
   const status = env === 'development' ? 'preview' : 'publish'
   const response = await notion.databases.query({
     database_id: databaseId,
-    filter: {
-      or: [
-        {
-          property: status,
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
-    sorts: [
-      {
-        property: sortProperty,
-        direction: sort,
-      },
-    ],
+    // filter: {
+    //   or: [
+    //     {
+    //       property: status,
+    //       checkbox: {
+    //         equals: true,
+    //       },
+    //     },
+    //   ],
+    // },
+    // sorts: [
+    //   {
+    //     property: sortProperty,
+    //     direction: sort,
+    //   },
+    // ],
   })
+
+  console.log("response from notion : ", response)
   // remove databaseId from response
   response.results.forEach((result) => {
     delete result.parent.database_id

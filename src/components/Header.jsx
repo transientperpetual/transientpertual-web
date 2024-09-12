@@ -55,9 +55,9 @@ function MobileNavigation(props) {
             <nav className="">
               <ul className="space-y-4 divide-zinc-100 text-center text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/">Home</MobileNavItem>
-                <MobileNavItem href="/about">About</MobileNavItem>
+                {/* <MobileNavItem href="/about">About</MobileNavItem> */}
                 <MobileNavItem href="/blog">Blog</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                {/* <MobileNavItem href="/projects">Projects</MobileNavItem> */}
                 <MobileNavItem href="">
                   <span className="text-red-500">Close</span>
                 </MobileNavItem>
@@ -98,9 +98,9 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex rounded-full bg-white/30 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/10">
         <NavItem href="/">Home</NavItem>
-        <NavItem href="/about">About</NavItem>
+        {/* <NavItem href="/about">About</NavItem> */}
         <NavItem href="/blog">Blog</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
+        {/* <NavItem href="/projects">Projects</NavItem> */}
       </ul>
     </nav>
   )
@@ -167,7 +167,7 @@ function Avatar({ className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <div className="flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-100 via-indigo-600 to-indigo-100 duration-300 dark:from-indigo-900/10 dark:via-violet-400 dark:to-violet-900/10">
+      <div className="flex items-center justify-center overflow-hidden rounded-full bg-neutral-900">
         <Image
           src={avatarImage}
           alt="Avatar Image of Ankit Jangid"

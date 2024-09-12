@@ -11,6 +11,7 @@ import { GoBook } from 'react-icons/go'
 import CountUp from 'react-countup'
 
 export function BlogCard({ article }) {
+  console.log("ART : ", article)
   const articleTitle = article.properties?.name.title[0].plain_text
   const articleDescription = article.properties.description?.rich_text
   const [status, setStatus] = useState(article.properties.Status?.status?.name)
