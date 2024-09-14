@@ -9,7 +9,7 @@ export const getDatabase = async (databaseId, sortProperty, sort) => {
   //   database_id: databaseId,
   // });
   const env = process.env.NODE_ENV
-  const status = env === 'development' ? 'preview' : 'publish'
+  // const status = env === 'development' ? 'preview' : 'publish'
   const response = await notion.databases.query({
     database_id: databaseId,
     // filter: {
@@ -29,12 +29,11 @@ export const getDatabase = async (databaseId, sortProperty, sort) => {
     //   },
     // ],
   })
-
-  console.log("response from notion : ", response)
   // remove databaseId from response
   response.results.forEach((result) => {
     delete result.parent.database_id
   })
+
   return response.results
 }
 

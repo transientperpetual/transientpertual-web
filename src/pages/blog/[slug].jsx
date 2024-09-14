@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { NextSeo, ArticleJsonLd } from 'next-seo'
 import Image from 'next/image'
@@ -167,7 +167,7 @@ export default function Post({
               <div className="my-8 text-center text-sm italic text-zinc-400 dark:text-zinc-500 md:my-12">
                 This post was last updated on {lastEditedFormatted}
               </div>
-              <LikeBtn variant="bottom" slug={slug} />
+              {/* <LikeBtn variant="bottom" slug={slug} /> */}
             </article>
           </div>
         </div>

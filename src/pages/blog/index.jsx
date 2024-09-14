@@ -35,21 +35,22 @@ export default function Blog({ articles, articlePositions }) {
         }}
       />
       <SimpleLayout
-        title="Welcome to my"
-        postTitle="Digital Garden."
-        intro="This is a collection of my long-form thoughts on Web Dev, AI, Blockchains, and more in various stages of completion from Seedling to Evergreen. I hope you find something that piques your interest."
+        title="Shedding Conditioning to"
+        postTitle="Find Truth."
+        intro="An exploration of how intuition leads to the discovery of personal truths, as layers of conditioning fall away, leaving behind clarity and authenticity."
       >
         <div className="masonry lg:masonry-md md:masonry-sm">
           <div className="hidden space-y-10 md:block">
             {rearrangedArticles.map((article, index) => (
-              <BlogCard key={index} article={article} index={index} />
+              article.properties.publish.checkbox && <BlogCard key={index} article={article} index={index} />
             ))}
           </div>
-          <div className="space-y-10 md:hidden">
+          {/* un sure what they below duplication is for */}
+          {/* <div className="space-y-10 md:hidden">
             {articles.map((article, index) => (
-              <BlogCard key={index} article={article} index={index} />
+              article.properties.publish.checkbox && <BlogCard key={index} article={article} index={index} />
             ))}
-          </div>
+          </div> */}
         </div>
       </SimpleLayout>
     </>
@@ -76,8 +77,6 @@ export const getStaticProps = async () => {
   //   // Update the article object with the pageViews data
   //   article.pageViews = pageViews
   // }
-
-  console.log("DB : ", database);
 
   return {
     props: {
