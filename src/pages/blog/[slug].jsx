@@ -7,7 +7,6 @@ import slugify from 'slugify'
 
 import { Container } from '@/components/Container'
 import { Text, renderBlock } from '@/components/RenderNotion'
-import { LikeBtn } from '@/components/LikeButton'
 import { Prose } from '@/components/Prose'
 import { getDatabase, getPage, getBlocks } from '@/lib/notion'
 import { baseUrl } from '../../seo.config'
@@ -30,10 +29,10 @@ export default function Post({
   if (!article || !blocks) {
     return <div />
   }
-  const articleTitle = article.properties.name.title
-  const articleDescription = article.properties.description.rich_text
+  const articleTitle = article.properties?.Name.title
+  const articleDescription = article.properties.Description?.rich_text
   const wordCount = article.properties.wordCount.number
-  const readingTime = Math.ceil(wordCount === null ? 0 : wordCount / 265)
+  const readingTime = Math.ceil(wordCount === null ? 0 : wordCount / 180)
   const env = process.env.NODE_ENV
 
   const coverImgFn = () => {
@@ -49,13 +48,13 @@ export default function Post({
     }
   }
   const coverImg = coverImgFn()
-  const coverImgCaption = article.properties.coverImgCaption.rich_text.length
-    ? article.properties.coverImgCaption.rich_text[0].plain_text
-    : false
+  // const coverImgCaption = article.properties.coverImgCaption.rich_text.length
+  //   ? article.properties.coverImgCaption.rich_text[0].plain_text
+  //   : false
   // if env is production, update the views
-  if (env === 'production') {
-    UpdateViews(slug)
-  }
+  // if (env === 'production') {
+  //   UpdateViews(slug)
+  // }
   // console.log(
   //   `${baseUrl}api/og?title=${encodeURIComponent(
   //     articleTitle[0].plain_text
@@ -67,6 +66,7 @@ export default function Post({
   return (
     <div>
       <NextSeo
+      
         title={articleTitle[0].plain_text}
         description={articleDescription[0].plain_text}
         canonical={`${baseUrl}articles/${slug}/`}
@@ -153,11 +153,11 @@ export default function Post({
                     onLoad={() => setLoading(false)}
                   />
                 )}
-                {coverImgCaption && (
+                {/* {coverImgCaption && (
                   <figcaption className="mt-3 text-center text-sm italic text-zinc-400 dark:text-zinc-500">
                     Photo by {coverImgCaption}
                   </figcaption>
-                )}
+                )} */}
               </header>
               <Prose className={coverImg ? 'mt-8' : 'mt-0'}>
                 {blocks.map((block) => (
@@ -181,7 +181,7 @@ export const getStaticPaths = async () => {
   return {
     paths: database.map((article) => ({
       params: {
-        slug: slugify(article.properties.name.title[0].plain_text, {
+        slug: slugify(article.properties?.Name.title[0]?.plain_text, {
           strict: true,
           lower: true,
         }),
@@ -191,12 +191,14 @@ export const getStaticPaths = async () => {
   }
 }
 
+// up next - find date from article obj
+
 export const getStaticProps = async (context) => {
   const { slug } = context.params
   const database = await getDatabase(databaseId, 'date', 'descending')
   const id = database.find(
     (post) =>
-      slugify(post.properties.name.title[0].plain_text, {
+      slugify(post.properties?.Name.title[0]?.plain_text, {
         strict: true,
         lower: true,
       }) === slug
@@ -211,7 +213,9 @@ export const getStaticProps = async (context) => {
       year: 'numeric',
     }
   )
-  const dateUtc = article.properties.date.date.start
+
+  // published date
+  const dateUtc = article.created_time
   const dateFormatted = new Date(dateUtc).toLocaleDateString('en-US', {
     month: 'short',
     day: '2-digit',
