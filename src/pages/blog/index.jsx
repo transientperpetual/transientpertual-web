@@ -45,12 +45,11 @@ export default function Blog({ articles, articlePositions }) {
               article.properties.publish.checkbox && <BlogCard key={index} article={article} index={index} />
             ))}
           </div>
-          {/* un sure what they below duplication is for */}
-          {/* <div className="space-y-10 md:hidden">
+          <div className="space-y-10 md:hidden">
             {articles.map((article, index) => (
               article.properties.publish.checkbox && <BlogCard key={index} article={article} index={index} />
             ))}
-          </div> */}
+          </div>
         </div>
       </SimpleLayout>
     </>
