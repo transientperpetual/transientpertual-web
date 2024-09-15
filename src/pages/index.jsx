@@ -51,7 +51,7 @@ export default function Home({ previousPathname }) {
             To be portfolio + blog website
           </p>
 
-          <Button
+          {/* <Button
             href="/about"
             className={clsx(
               `py-1.5 md:py-2`,
@@ -59,7 +59,7 @@ export default function Home({ previousPathname }) {
             )}
           >
             Learn More
-          </Button>
+          </Button> */}
         </div>
       </Container>
     </>
