@@ -44,7 +44,7 @@ export function Footer() {
                 <NavLink href="https://www.linkedin.com/in/jangidankit/">
                   LinkedIn
                 </NavLink>
-                <NavLink href="iamjangidankit@gmail.com">Mail</NavLink>
+                <NavLink href="/">Mail</NavLink>
               </div>
               <div className="flex gap-x-12 md:hidden">
                 <SocialLinkMobile
@@ -64,7 +64,7 @@ export function Footer() {
                 />
                 <SocialLinkMobile
                   className="h-6 w-6"
-                  href="iamjangidankit@gmail.com"
+                  href="/"
                   aria-label="Send an email"
                   icon={MdEmail}
                 />
