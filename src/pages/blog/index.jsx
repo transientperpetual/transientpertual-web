@@ -17,13 +17,13 @@ export default function Blog({ articles, articlePositions }) {
     <>
       <NextSeo
         title="Blog"
-        description="This is a collection of my long-form thoughts on Web Dev, AI, Blockchains, and more in various stages of completion from Seedling to Evergreen."
+        description="An exploration of how intuition leads to the discovery of personal truths, as layers of conditioning fall away, leaving behind clarity and authenticity."
         canonical={`${baseUrl}blog/`}
         openGraph={{
           url: `${baseUrl}blog/`,
           title: 'Blog',
           description:
-            'This is a collection of my long-form thoughts on Web Dev, AI, Blockchains, and more in various stages of completion from Seedling to Evergreen.',
+            'An exploration of how intuition leads to the discovery of personal truths, as layers of conditioning fall away, leaving behind clarity and authenticity.',
           images: [
             {
               url: `${baseUrl}api/og?title=Blog`,

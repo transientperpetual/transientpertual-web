@@ -106,7 +106,7 @@ export function BlogCard({ article }) {
             {articleTitle}
           </div>
         </h3>
-        <p className="mt-4 block max-w-full break-all text-base text-gray-500 dark:text-gray-400">
+        <p className="mt-4 block max-w-full text-base text-gray-500 dark:text-gray-400">
           <Text text={articleDescription} />
         </p>
         {fixedStatus !== '⚡ Intuition' && (
