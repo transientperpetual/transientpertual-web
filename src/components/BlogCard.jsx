@@ -11,10 +11,11 @@ import { GoBook } from 'react-icons/go'
 import CountUp from 'react-countup'
 
 export function BlogCard({ article }) {
+
   const articleTitle = article.properties?.Name.title[0]?.plain_text
   const articleDescription = article.properties.Description?.rich_text
-  const [status, setStatus] = useState(article.properties.Status?.rich_text[0]?.plain_text)
-  const fixedStatus = article.properties.Status?.rich_text[0]?.plain_text
+  const [status, setStatus] = useState(article.properties.Status.select.name)
+  const fixedStatus = article.properties.Status.select.name
   const slug = slugify(articleTitle, { strict: true, lower: true })
   const wordCount = article.properties.wordCount.number
   const readingTime = Math.ceil(wordCount === null ? 0 : wordCount / 180)
@@ -43,7 +44,7 @@ export function BlogCard({ article }) {
     setStatus('⚙️ In Progress')
     setStatusBg('bg-pink-600/80 dark:bg-pink-500/80 duration-[5000ms]')
     setTimeout(() => {
-      setStatus(article.properties.Status?.rich_text[0]?.plain_text)
+      setStatus(article.properties.Status.select.name)
       setStatusBg('bg-indigo-500/90 duration-[3000ms]')
     }, 3000)
   }
