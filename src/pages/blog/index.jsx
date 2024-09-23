@@ -41,14 +41,22 @@ export default function Blog({ articles, articlePositions }) {
       >
         <div className="masonry lg:masonry-md md:masonry-sm">
           <div className="hidden space-y-10 md:block">
-            {rearrangedArticles.map((article, index) => (
-              article.properties.Publish.checkbox && <BlogCard key={index} article={article} index={index} />
-            ))}
+            {rearrangedArticles.map(
+              (article, index) =>
+                article.properties.Publish.checkbox &&
+                article.properties.Type.select.name === 'Writing' && (
+                  <BlogCard key={index} article={article} index={index} />
+                )
+            )}
           </div>
           <div className="space-y-10 md:hidden">
-            {articles.map((article, index) => (
-              article.properties.Publish.checkbox && <BlogCard key={index} article={article} index={index} />
-            ))}
+            {articles.map(
+              (article, index) =>
+                article.properties.Publish.checkbox &&
+                article.properties.Type.select.name === 'Writing' && (
+                  <BlogCard key={index} article={article} index={index} />
+                )
+            )}
           </div>
         </div>
       </SimpleLayout>

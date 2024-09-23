@@ -12,10 +12,11 @@ import CountUp from 'react-countup'
 
 export function BlogCard({ article }) {
 
+  console.log("ARTICLE : ", article.properties.Type.select.name)
   const articleTitle = article.properties?.Name.title[0]?.plain_text
   const articleDescription = article.properties.Description?.rich_text
-  const [status, setStatus] = useState(article.properties.Status.select.name)
-  const fixedStatus = article.properties.Status.select.name
+  const [status, setStatus] = useState(article.properties.Status.select?.name)
+  const fixedStatus = article.properties.Status.select?.name
   const slug = slugify(articleTitle, { strict: true, lower: true })
   const wordCount = article.properties.wordCount.number
   const readingTime = Math.ceil(wordCount === null ? 0 : wordCount / 180)
