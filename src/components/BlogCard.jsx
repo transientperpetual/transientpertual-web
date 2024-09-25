@@ -12,7 +12,6 @@ import CountUp from 'react-countup'
 
 export function BlogCard({ article }) {
 
-  console.log("ARTICLE : ", article.properties.Type.select.name)
   const articleTitle = article.properties?.Name.title[0]?.plain_text
   const articleDescription = article.properties.Description?.rich_text
   const [status, setStatus] = useState(article.properties.Status.select?.name)

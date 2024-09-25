@@ -3,7 +3,7 @@ import yc from '@/images/projects/yc.png'
 import frize from '@/images/projects/frize.png'
 import formulator from '@/images/projects/formulator.png'
 import shouldreads from '@/images/projects/shouldreads.png'
-import total_recall from '@/images/projects/total_recall.png'
+import large from '@/images/projects/large.gif'
 
 const data = [
   {
@@ -11,7 +11,7 @@ const data = [
     description:
       'The smartest way to recall, summarise or chat with a YouTube video. Just paste the link, hit enter, and ask questions about the video in seconds and get lightning fast answers.',
     techUsed: ['Next.js', 'Tailwind', 'Supabase', 'Groq', 'AWS Lambda'],
-    image: total_recall,
+    image: large,
     link: 'https://totalrecall.rittik.io',
   },
   {
