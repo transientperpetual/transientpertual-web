@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import MermaidComponent from './MermaidComponent'
 
 import clsx from 'clsx'
 import { Tweet } from 'react-tweet'
@@ -59,14 +60,14 @@ const components = {
 
 const Embed = (value, type) => {
   let src
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
   try {
     src = value.type === 'external' ? value.external.url : value.file.url
   } catch {
     src = value.url
   }
   const caption = value.caption ? value.caption[0]?.plain_text : ''
-  if (src.startsWith('https://twitter.com')) {
+  if (src.startsWith('https://x.com')) {
     const tweetId = src.match(/status\/(\d+)/)[1]
     return (
       <div className="light justify-center md:flex">
@@ -77,6 +78,7 @@ const Embed = (value, type) => {
     src = src.replace('watch?v=', 'embed/')
     return (
       <iframe
+        title="youtube"
         className="aspect-video w-full rounded-3xl"
         src={src}
         alt={caption}
@@ -95,7 +97,7 @@ const Embed = (value, type) => {
             )}
             height="300"
             width="500"
-            onLoad={() => setLoading(false)}
+            onLoad={() => setIsLoading(false)}
           />
         </div>
         {caption && <figcaption className="text-center">{caption}</figcaption>}
@@ -199,16 +201,25 @@ export const renderBlock = (block) => {
     case 'code':
       const language = value.language.replace(' ', '').toLowerCase()
       const code = value.rich_text[0].plain_text
+      if (language === 'mermaid') {
+        return (
+          <pre>
+            <MermaidComponent code={code} key={id} />
+          </pre>
+        )
+      }
+      // Proceed with syntax highlighting for other languages
       let codeHighlight
       try {
         codeHighlight = hljs.highlight(code, {
-          language: language,
+          language,
         }).value
       } catch (err) {
         codeHighlight = hljs.highlight(code, {
           language: 'plaintext',
         }).value
       }
+
       return (
         <pre className="md:custom-scrollbar text-xs dark:prose-invert md:text-sm">
           <code

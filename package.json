@@ -24,6 +24,7 @@
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
     "highlight.js": "^11.6.0",
+    "mermaid": "^11.2.1",
     "next": "^14.0.4",
     "next-seo": "^5.5.0",
     "postcss-focus-visible": "^6.0.4",

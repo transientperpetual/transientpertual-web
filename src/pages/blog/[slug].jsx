@@ -4,7 +4,6 @@ import { NextSeo, ArticleJsonLd } from 'next-seo'
 import Image from 'next/image'
 import clsx from 'clsx'
 import slugify from 'slugify'
-
 import { Container } from '@/components/Container'
 import { Text, renderBlock } from '@/components/RenderNotion'
 import { Prose } from '@/components/Prose'
@@ -25,7 +24,7 @@ export default function Post({
   blocks,
   slug,
 }) {
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
   if (!article || !blocks) {
     return <div />
   }
@@ -66,14 +65,13 @@ export default function Post({
   return (
     <div>
       <NextSeo
-      
         title={articleTitle[0].plain_text}
-        description={articleDescription[0].plain_text}
+        description={articleDescription[0]?.plain_text}
         canonical={`${baseUrl}articles/${slug}/`}
         openGraph={{
           url: `${baseUrl}articles/${slug}/`,
           title: articleTitle[0].plain_text,
-          description: articleDescription[0].plain_text,
+          description: articleDescription[0]?.plain_text,
           images: [
             {
               url: `${baseUrl}api/og?title=${encodeURIComponent(
@@ -108,7 +106,7 @@ export default function Post({
         datePublished={new Date(dateUtc).toISOString()}
         dateModified={new Date(lastEditedUtc).toISOString()}
         authorName="Ankit Jangid"
-        description={articleDescription[0].plain_text}
+        description={articleDescription[0]?.plain_text}
       />
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
@@ -150,7 +148,7 @@ export default function Post({
                     width={1200}
                     height={300}
                     priority
-                    onLoad={() => setLoading(false)}
+                    onLoad={() => setIsLoading(false)}
                   />
                 )}
                 {/* {coverImgCaption && (
