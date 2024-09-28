@@ -67,7 +67,7 @@ const Embed = (value, type) => {
     src = value.url
   }
   const caption = value.caption ? value.caption[0]?.plain_text : ''
-  if (src.startsWith('https://x.com')) {
+  if (src.startsWith('https://twitter.com')) {
     const tweetId = src.match(/status\/(\d+)/)[1]
     return (
       <div className="light justify-center md:flex">
