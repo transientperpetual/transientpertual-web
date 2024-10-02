@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import MermaidComponent from './MermaidComponent'
@@ -61,6 +61,14 @@ const components = {
 const Embed = (value, type) => {
   let src
   const [isLoading, setIsLoading] = useState(true)
+  const [imageSize, setImageSize] = useState({ width: 0, height: 0 })
+
+  const handleImageLoad = (event) => {
+    const { naturalWidth, naturalHeight } = event.target
+    setImageSize({ width: naturalWidth, height: naturalHeight })
+    setIsLoading(false)
+  }
+
   try {
     src = value.type === 'external' ? value.external.url : value.file.url
   } catch {
@@ -75,7 +83,11 @@ const Embed = (value, type) => {
       </div>
     )
   } else if (src.startsWith('https://www.youtube.com')) {
-    src = src.replace('watch?v=', 'embed/')
+    if (src.includes('watch?v=')) {
+      src = src.replace('watch?v=', 'embed/')
+    } else if (src.includes('shorts')) {
+      src = src.replace('shorts', 'embed')
+    }
     return (
       <iframe
         title="youtube"
@@ -87,17 +99,27 @@ const Embed = (value, type) => {
   } else if (type === 'image') {
     return (
       <>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center p-4">
+          {/* {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center rounded-md bg-gray-200">
+              LOADING...
+              <div className="loader"></div>
+            </div>
+          )} */}
           <Image
             src={src}
             alt={caption ? caption : 'Notion image'}
             className={clsx(
-              'block h-min w-full rounded-md object-contain duration-700 ease-in-out',
+              'block rounded-md object-contain duration-700 ease-in-out',
               isLoading ? 'blur grayscale' : 'blur-0 grayscale-0'
             )}
-            height="300"
-            width="500"
-            onLoad={() => setIsLoading(false)}
+            style={{
+              maxWidth: imageSize.width ? `${imageSize.width}px` : '100%',
+              maxHeight: imageSize.height ? `${imageSize.height}px` : '100%',
+            }}
+            height={imageSize.height || 300}
+            width={imageSize.width || 500}
+            onLoad={handleImageLoad}
           />
         </div>
         {caption && <figcaption className="text-center">{caption}</figcaption>}
