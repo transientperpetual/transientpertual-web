@@ -59,11 +59,12 @@ function Project({ project, index }) {
               src={coverImg}
               alt={`Screenshot of ${projectTitle}`}
               className={clsx(
-                `h-full w-full object-contain duration-1000 ease-in-out ${delay[index]}`,
-                isLoading ? 'blur-lg' : 'blur-0'
+                `h-full w-full rounded-xl shadow-md object-cover duration-1000 ease-in-out ${delay[index]}`,
+                isLoading ? 'blur-xl' : 'blur-0'
               )}
               height="300"
               width="500"
+              priority
               // placeholder="blur"
               onLoad={() => setLoading(false)}
             />

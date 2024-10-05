@@ -102,6 +102,7 @@ const Embed = (value, type) => {
             )}
             height="300"
             width="500"
+            priority
             onLoad={() => setIsLoading(false)}
           />
         </div>
