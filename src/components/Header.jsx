@@ -23,7 +23,7 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/50 px-4 py-1 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 outline-none ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/5">
+      <Popover.Button className="group flex items-center rounded-lg bg-white/50 px-4 py-1 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 outline-none ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/5">
         <span className="tracking-wider">Menu</span>
         <BsChevronDown className="ml-3 h-auto w-2 stroke-zinc-600 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
@@ -50,7 +50,7 @@ function MobileNavigation(props) {
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-1/3 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 top-1/3 z-50 origin-top rounded-lg bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
           >
             <nav className="">
               <ul className="space-y-4 divide-zinc-100 text-center text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
@@ -96,7 +96,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/30 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/10">
+      <ul className="flex rounded-lg bg-white/30 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/10">
         <NavItem href="/">Home</NavItem>
         {/* <NavItem href="/about">About</NavItem> */}
         <NavItem href="/blog">Blog</NavItem>
@@ -167,7 +167,7 @@ function Avatar({ className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <div className="flex items-center justify-center overflow-hidden rounded-full bg-neutral-900">
+      {/* <div className="flex items-center justify-center overflow-hidden rounded-full bg-neutral-900">
         <Image
           src={avatarImage}
           alt="Avatar Image of Ankit Jangid"
@@ -175,7 +175,7 @@ function Avatar({ className, ...props }) {
           className="flex items-center bg-indigo-500/10 saturate-150 backdrop-blur-sm"
           priority
         />
-      </div>
+      </div> */}
     </Link>
   )
 }

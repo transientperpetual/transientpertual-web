@@ -17,6 +17,7 @@ export default function Post({
   article,
   dateUtc,
   dateFormatted,
+  executedDateFormatted,
   lastEditedUtc,
   lastEditedFormatted,
   blocks,
@@ -123,10 +124,10 @@ export default function Post({
                 </h1>
                 <div className="mb-6 flex items-center font-poppins">
                   <time
-                    dateTime={dateFormatted}
+                    dateTime={executedDateFormatted}
                     className="flex items-center text-sm text-zinc-400 dark:text-zinc-500 md:text-base"
                   >
-                    {dateFormatted}
+                    {executedDateFormatted}
                   </time>
                   {/* <span className="mx-2 text-zinc-400 dark:text-zinc-500 md:text-base">
                     •
@@ -217,6 +218,15 @@ export const getStaticProps = async (context) => {
     day: '2-digit',
     year: 'numeric',
   })
+
+  // project executed date
+  const executedDateUtc = article.properties.Executed.date.start;
+  const executedDateFormatted = new Date(executedDateUtc).toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  })
+
   const blocks = await getBlocks(id)
 
   // Retrieve block children for nested blocks (one level deep), for example toggle blocks
@@ -246,6 +256,7 @@ export const getStaticProps = async (context) => {
       article,
       dateUtc,
       dateFormatted,
+      executedDateFormatted,
       lastEditedUtc,
       lastEditedFormatted,
       blocks: blocksWithChildren,
