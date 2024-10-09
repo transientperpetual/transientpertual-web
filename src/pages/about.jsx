@@ -20,7 +20,7 @@ import {
 
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
-import portraitImage from '@/images/avatar.png'
+// import portraitImage from '@/images/avatar.png'
 import { baseUrl } from '../seo.config'
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -83,13 +83,13 @@ export default function About() {
           <div className="flex justify-center lg:col-span-5">
             <div className="pt-2 lg:pl-10">
               <div className="max-w-xs px-2.5">
-                <Image
+                {/* <Image
                   src={portraitImage}
                   alt="Avatar Image of Ankit Jangid"
                   sizes="(min-width: 1024px) 32rem, 20rem"
                   className="transition duration-500 hover:scale-110"
                   priority
-                />
+                /> */}
               </div>
             </div>
           </div>
