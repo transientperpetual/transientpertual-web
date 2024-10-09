@@ -152,7 +152,7 @@ function AvatarContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'h-9 w-9 rounded-full ring-indigo-500/10 ring-offset-2 duration-300 hover:scale-110 hover:ring-purple-500/80 dark:ring-indigo-500/20 dark:ring-offset-zinc-900 hover:dark:ring-indigo-500/80 md:h-10 md:w-10 md:ring-1'
+        'h-9 w-9 rounded-full'
       )}
       {...props}
     />
@@ -167,15 +167,15 @@ function Avatar({ className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      {/* <div className="flex items-center justify-center overflow-hidden rounded-full bg-neutral-900">
+      <div className="flex items-center justify-center overflow-hidden rounded-full">
         <Image
           src={avatarImage}
           alt="Avatar Image of Ankit Jangid"
           sizes="2.25rem"
-          className="flex items-center bg-indigo-500/10 saturate-150 backdrop-blur-sm"
+          className="flex items-center  saturate-150 backdrop-blur-sm"
           priority
         />
-      </div> */}
+      </div>
     </Link>
   )
 }
