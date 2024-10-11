@@ -169,6 +169,7 @@ function Avatar({ className, ...props }) {
     >
       <div className="flex items-center justify-center overflow-hidden rounded-full">
         <Image
+          unoptimized
           src={avatarImage}
           alt="Avatar Image of Ankit Jangid"
           sizes="2.25rem"

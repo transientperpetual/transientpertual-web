@@ -138,6 +138,7 @@ export default function Post({
                 </div>
                 {coverImg && (
                   <Image
+                    unoptimized
                     src={coverImg}
                     alt={'Cover Image for ' + articleTitle[0].plain_text}
                     className={clsx(

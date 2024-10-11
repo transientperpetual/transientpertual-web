@@ -84,6 +84,7 @@ export function BlogCard({ article }) {
         {!!coverImg && (
           <div className="aspect-w-16 aspect-h-9 h-64 w-full overflow-hidden rounded-md">
             <Image
+              unoptimized
               src={coverImg}
               alt={'Cover Image for ' + articleTitle}
               className={clsx(

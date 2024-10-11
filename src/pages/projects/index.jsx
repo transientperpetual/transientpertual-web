@@ -56,6 +56,7 @@ function Project({ project, index }) {
         <Card as="li">
           <div className=" aspect-w-16 aspect-h-9 group relative z-10 flex h-56 w-full cursor-pointer items-center justify-center transition duration-500 dark:ring-0 tab:h-80 md:group-hover:scale-105 lg:h-64">
             <Image
+              unoptimized
               src={coverImg}
               alt={`Screenshot of ${projectTitle}`}
               className={clsx(

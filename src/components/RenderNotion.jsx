@@ -54,8 +54,8 @@ export const Text = ({ text, className }) => {
 }
 
 const components = {
-  AvatarImg: (props) => <Image {...props} />,
-  MediaImg: (props) => <Image {...props} fill />,
+  AvatarImg: (props) => <Image unoptimized {...props} />,
+  MediaImg: (props) => <Image unoptimized {...props} fill />,
 }
 
 const Embed = (value, type) => {
@@ -94,6 +94,7 @@ const Embed = (value, type) => {
       <>
         <div className="flex items-center justify-center">
           <Image
+            unoptimized
             src={src}
             alt={caption ? caption : 'Notion image'}
             className={clsx(
