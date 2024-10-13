@@ -155,6 +155,7 @@ export default function Projects({ projects, articlePositions }) {
           className="grid grid-cols-1 gap-12 sm:grid-cols-1 lg:grid-cols-2"
         >
           {projects.map((project, index) => (
+            project.properties.Publish.checkbox &&
             <Project key={index} project={project} index={index} />
           ))}
         </ul>
