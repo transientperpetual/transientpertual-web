@@ -9,27 +9,27 @@ import { baseUrl } from '../../seo.config'
 
 import { createClient } from '@supabase/supabase-js'
 
-export default function Blog({ articles, articlePositions }) {
+export default function Archive({ articles, articlePositions }) {
   const rearrangedArticles = Object.values(articlePositions).map(
     (pos) => articles[pos - 1]
   )
   return (
     <>
       <NextSeo
-        title="Blog"
-        description="An exploration of how intuition leads to the discovery of personal truths, as layers of conditioning fall away, leaving behind clarity and authenticity."
-        canonical={`${baseUrl}blog/`}
+        title="Archive"
+        description="every write evolves from Intuition to Prototype to Truth."
+        canonical={`${baseUrl}archive/`}
         openGraph={{
-          url: `${baseUrl}blog/`,
-          title: 'Blog',
+          url: `${baseUrl}archive/`,
+          title: 'Archive',
           description:
-            'An exploration of how intuition leads to the discovery of personal truths, as layers of conditioning fall away, leaving behind clarity and authenticity.',
+            'every write evolves from Intuition to Prototype to Truth.',
           images: [
             {
-              url: `${baseUrl}api/og?title=Blog`,
+              url: `${baseUrl}api/og?title=Archive`,
               width: 1200,
               height: 600,
-              alt: `Blog | Ankit Jangid`,
+              alt: `Archive | Ankit Jangid`,
             },
           ],
         }}
@@ -37,7 +37,7 @@ export default function Blog({ articles, articlePositions }) {
       <SimpleLayout
         title="attempts to structure the"
         postTitle="chaos of mind."
-        intro="When intuition knocks, I welcome it in. It stays with me until transforming into truth. Each post travels this path, evolving from Intuition to Prototype to Truth."
+        intro="every write evolves from Intuition to Prototype to Truth."
       >
         <div className="masonry lg:masonry-md md:masonry-sm">
           <div className="hidden space-y-10 md:block">

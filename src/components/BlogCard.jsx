@@ -51,7 +51,7 @@ export function BlogCard({ article }) {
 
   const ArticleWrapper = fixedStatus === '⚡ Intuition' ? 'div' : Link
   const linkProps =
-    fixedStatus === '⚡ Intuition' ? {} : { href: '/blog/' + slug }
+    fixedStatus === '⚡ Intuition' ? {} : { href: '/archive/' + slug }
   return (
     <div
       className={clsx(

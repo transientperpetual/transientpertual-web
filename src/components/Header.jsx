@@ -56,8 +56,8 @@ function MobileNavigation(props) {
               <ul className="space-y-4 divide-zinc-100 text-center text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/">Home</MobileNavItem>
                 {/* <MobileNavItem href="/about">About</MobileNavItem> */}
-                <MobileNavItem href="/blog">Blog</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/archive">Archive</MobileNavItem>
+                <MobileNavItem href="/work">Work</MobileNavItem>
                 <MobileNavItem href="">
                   <span className="text-red-500">Close</span>
                 </MobileNavItem>

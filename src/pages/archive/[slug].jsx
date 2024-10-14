@@ -9,7 +9,6 @@ import { Text, renderBlock } from '@/components/RenderNotion'
 import { Prose } from '@/components/Prose'
 import { getDatabase, getPage, getBlocks } from '@/lib/notion'
 import { baseUrl } from '../../seo.config'
-import { UpdateViews } from '@/components/PageViews'
 
 import { BsArrowLeft } from 'react-icons/bs'
 
@@ -112,8 +111,8 @@ export default function Post({
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
             <Link
-              href="/blog"
-              aria-label="Go back to articles"
+              href="/archive"
+              aria-label="Go back to archive"
               className="group mb-8 hidden h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:flex lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
             >
               <BsArrowLeft className="h-4 w-4 text-zinc-500 transition group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300" />

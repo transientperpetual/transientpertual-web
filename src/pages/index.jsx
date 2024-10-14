@@ -48,7 +48,7 @@ export default function Home({ previousPathname }) {
               previousPathname === undefined && 'animate-fade-in'
             )}
           >
-            To be portfolio + blog website
+            To be portfolio + archive
           </p>
 
           {/* <Button

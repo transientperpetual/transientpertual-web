@@ -73,7 +73,7 @@ export default function About() {
               url: `${baseUrl}api/og?title=About`,
               width: 1200,
               height: 600,
-              alt: `Blog | Ankit Jangid`,
+              alt: `Archive | Ankit Jangid`,
             },
           ],
         }}
@@ -195,8 +195,8 @@ export default function About() {
               </div>
 
               <div className="flex justify-center pt-8 md:hidden">
-                <Button href="/projects" className="py-2">
-                  See my projects
+                <Button href="/work" className="py-2">
+                  See my work
                 </Button>
               </div>
             </div>
@@ -235,8 +235,8 @@ export default function About() {
                 >
                   iamjangidankit
                 </SocialLink>
-                <Button href="/projects" className="py-2">
-                  See my projects
+                <Button href="/work" className="py-2">
+                  See my work
                 </Button>
               </ul>
             </div>

@@ -44,7 +44,7 @@ function Project({ project, index }) {
   const coverImg = coverImgFn()
 
   const ArticleWrapper = Link
-  const linkProps = { href: '/projects/' + slug }
+  const linkProps = { href: '/work/' + slug }
 
   return (
     <>
@@ -119,28 +119,25 @@ function Project({ project, index }) {
   )
 }
 
-export default function Projects({ projects, articlePositions }) {
-  const rearrangedArticles = Object.values(articlePositions).map(
-    (pos) => projects[pos - 1]
-  )
+export default function Projects({ projects }) {
 
   return (
     <>
       <NextSeo
-        title="Projects"
+        title="Work"
         description="Creations born from curiosity and the pursuit of innovation."
-        canonical={`${baseUrl}projects/`}
+        canonical={`${baseUrl}work/`}
         openGraph={{
-          url: `${baseUrl}projects/`,
-          title: 'Projects',
+          url: `${baseUrl}work/`,
+          title: 'Work',
           description:
             'Creations born from curiosity and the pursuit of innovation',
           images: [
             {
-              url: `${baseUrl}api/og?title=Projects`,
+              url: `${baseUrl}api/og?title=Work`,
               width: 1200,
               height: 600,
-              alt: `Projects | Ankit Jangid`,
+              alt: `Work | Ankit Jangid`,
             },
           ],
         }}

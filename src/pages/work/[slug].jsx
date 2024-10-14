@@ -66,9 +66,9 @@ export default function Post({
       <NextSeo
         title={articleTitle[0].plain_text}
         description={articleDescription[0].plain_text}
-        canonical={`${baseUrl}projects/${slug}/`}
+        canonical={`${baseUrl}work/${slug}/`}
         openGraph={{
-          url: `${baseUrl}projects/${slug}/`,
+          url: `${baseUrl}work/${slug}/`,
           title: articleTitle[0].plain_text,
           description: articleDescription[0].plain_text,
           images: [
@@ -93,7 +93,7 @@ export default function Post({
       />
 
       <ArticleJsonLd
-        url={`${baseUrl}projects/${slug}/`}
+        url={`${baseUrl}work/${slug}/`}
         title={articleTitle[0].plain_text}
         images={[
           `${baseUrl}api/og?title=${encodeURIComponent(
@@ -111,8 +111,8 @@ export default function Post({
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
             <Link
-              href="/projects"
-              aria-label="Go back to projects"
+              href="/work"
+              aria-label="Go back to work"
               className="group mb-8 hidden h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:flex lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
             >
               <BsArrowLeft className="h-4 w-4 text-zinc-500 transition group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
