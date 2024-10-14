@@ -99,8 +99,8 @@ function DesktopNavigation(props) {
       <ul className="flex rounded-lg bg-white/30 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/30 dark:text-zinc-200 dark:shadow-none dark:ring-white/10">
         <NavItem href="/">Home</NavItem>
         {/* <NavItem href="/about">About</NavItem> */}
-        <NavItem href="/blog">Blog</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="/archive">Archive</NavItem>
+        <NavItem href="/work">Work</NavItem>
       </ul>
     </nav>
   )

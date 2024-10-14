@@ -136,7 +136,7 @@ export default function Post({
                     {readingTime} min read
                   </span> */}
                 </div>
-                {coverImg && (
+                {/* {coverImg && (
                   <Image
                     unoptimized
                     src={coverImg}
@@ -150,7 +150,7 @@ export default function Post({
                     priority
                     onLoad={() => setLoading(false)}
                   />
-                )}
+                )} */}
                 {/* {coverImgCaption && (
                   <figcaption className="mt-3 text-center text-sm italic text-zinc-400 dark:text-zinc-500">
                     Photo by {coverImgCaption}
